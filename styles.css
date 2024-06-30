@@ -1,0 +1,468 @@
+:root {
+    --site_color_01: #f7e1ed;
+    --site_color_02: #ecbecf;
+    --site_color_03: #c6a693;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+header {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/*BANNER*/
+
+.banner {
+    display: none;
+    background: #a26970;
+}
+
+.banner__content {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+.banner__text {
+    /*flex-grow: 1;*/
+    padding: 1rem;
+    font-size: small;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+}
+   
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+       to left,
+       hsl(340deg 100% 16%) 0%,
+       hsl(340deg 100% 32%) 8%,
+       hsl(340deg 100% 32%) 92%,
+       hsl(340deg 100% 16%) 100%
+     );
+}
+   
+.front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(345deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+}
+   
+.subscribe {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.subscribe:hover {
+    filter: brightness(110%);
+}
+   
+.subscribe:hover .front {
+    transform: translateY(-6px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+}
+   
+.subscribe:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+   
+.subscribe:hover .shadow {
+    transform: translateY(4px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+}
+   
+.subscribe:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+   
+.subscribe:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/*
+.banner__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+*/
+
+.glass {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+}
+
+/*TITLE*/
+
+.title {
+    background: transparent;
+}
+
+.title__content {
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.site-title {
+    position: relative;
+    font-family: 'LibreBodoni-Regular', serif;
+    color: white;
+    flex-grow: 1;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/*NAV GENERAL*/
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    fill: white;
+}
+
+.back-arrow {
+    fill: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Nasconde il menu mobile per default */
+.mobile-menu {
+    display: none;
+}
+
+.menu-capi {
+    flex-direction: column;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Nasconde il menu fuori dallo schermo */
+    height: 100%;
+    width: 100%;
+    max-width: 700px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: left 0.3s ease-in-out; /* Aggiunge l'animazione */
+}
+
+.menu-capi.active {
+    left: 0; /* Mostra il menu scorrendo da sinistra */
+}
+
+/* Mostra il menu desktop per default */
+.desktop-menu {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+}
+
+.desktop-menu ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    display: flex;
+}
+
+.desktop-menu ul li {
+    margin: 0 1rem; /* Adjust margin between menu items as needed */
+}
+
+.desktop-menu ul li a {
+    font-size: 1rem;
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Sets link color */
+    padding: 1rem 1rem; /* Adds padding to make clickable area larger */
+    display: block; /* Makes the link fill the list item */
+}
+
+.hero__content {
+    position: relative;
+    margin-top: -7.5rem;
+}
+
+.hero__image {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* Nasconde l'icona hamburger su schermi più grandi */
+    }
+    .desktop-menu {
+        display: block; /* Mostra il menu su schermi più grandi */
+    }
+    .desktop-menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .desktop-menu ul li {
+        display: inline-block;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .desktop-menu {
+        display: none; /* Nasconde il menu desktop su schermi più piccoli */
+    }
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Nasconde il menu fuori dallo schermo */
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        transition: left 0.3s ease-in-out; /* Aggiunge l'animazione */
+    }
+    .mobile-menu.active {
+        left: 0; /* Mostra il menu scorrendo da sinistra */
+    }
+    .hero__content {
+        margin-top: -4.5rem;
+    }
+}
+
+/* PRODUCT HOME */
+
+.product-home {
+    margin-bottom: 8rem;
+}
+
+.product-main-title {
+    position: relative;
+    font-family: 'Bodoni Moda', serif;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.product-main {
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: center;
+}
+
+/* PRODUCT GRID */
+
+.product-grid {
+    display: grid;
+    gap: 2rem;
+    width: 90%;
+}
+
+@media (min-width: 767px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-main {
+        padding: 1rem 1rem
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.product-card {
+    width: 100%;
+    background-color: white;
+    border-radius:5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, height 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    height: auto;
+    overflow: visible;
+}
+
+.image-container {
+    width: 100%;
+    padding-top: 154%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-image {
+    opacity: 0;
+}
+
+.product-card:hover .hover-image {
+    opacity: 1;
+}
+
+.product-card:hover .main-image {
+    opacity: 0;
+}
+
+.details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover .details {
+    transform: translateY(100%);
+    opacity: 1;
+}
+
+.size-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.size-btn {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 0.8em;
+}
+
+.size-btn:hover, .size-btn.active {
+    background-color: #007BFF;
+    color: white;
+    border-color: #007BFF;
+}
+
+.add-to-cart {
+    padding: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.8em;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
