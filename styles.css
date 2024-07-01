@@ -169,7 +169,7 @@ header {
 }
 
 .title-shrink {
-    background: white;
+    background: var(--site_color_01);
     padding: 0.5rem;
 }
 

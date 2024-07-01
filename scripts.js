@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const desktopMenu = document.getElementById('desktop-menu');
 
     const menuToggle = document.getElementById('menu-toggle');
-
     window.addEventListener("scroll", function() {
         if (window.scrollY > threshold) {
             title.classList.add("title-shrink");
