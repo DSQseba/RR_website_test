@@ -1,6 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navMenu = document.getElementById('nav-menu');
+    
+    const threshold = 100;
+    const title = document.getElementById('title');
+    const siteTitle = document.getElementById('site-title')
+    const desktopMenu = document.getElementById('desktop-menu');
+
     const menuToggle = document.getElementById('menu-toggle');
+
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > threshold) {
+            title.classList.add("title-shrink");
+            siteTitle.classList.add("site-title-shrink");
+            desktopMenu.classList.add("desktop-menu-shrink");
+            menuToggle.classList.add("menu-toggle-shrink");
+        } else {
+            title.classList.remove("title-shrink");
+            desktopMenu.classList.remove("desktop-menu-shrink");
+            siteTitle.classList.remove("site-title-shrink");
+            menuToggle.classList.remove("menu-toggle-shrink");
+        }
+    });
+    
+    const navMenu = document.getElementById('nav-menu');
     const closeMenu = document.getElementById('close-menu');
 
     const banner = document.getElementById('banner');
@@ -9,17 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const capiMenu = document.getElementById('capi-menu');
     const capiToggle = document.getElementById('capi-toggle');
-    const capiToggle_1 = document.getElementById('capi-toggle_1');
     const capiClose = document.getElementById('capi-close');
-
-
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    closeMenu.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
 
     /*
     closeBanner.addEventListener('click', function() {
@@ -27,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     */
 
-    capiToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', () => {
         capiMenu.classList.toggle('active');
     });
 
-    capiToggle_1.addEventListener('click', () => {
+    capiToggle.addEventListener('click', () => {
         capiMenu.classList.toggle('active');
     });
 

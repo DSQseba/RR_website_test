@@ -6,6 +6,7 @@
     <title>Sito Web di Esempio</title>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
 </head>
 <body>
 
@@ -34,41 +35,34 @@
             </div>
         </div>
 
-        <div class="glass">
-            <div class="title">
-                <div class="title__content">
+        <div class="title glass" id="title">
+            <div class="title__content">
+                <div class="items-left">
                     <div class="menu-toggle" id="menu-toggle">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
                         </svg>
                     </div>
-                    <div class="site-title">Raptus&Rose</div>
+                </div>
+                <div class="site-title" id="site-title">Raptus&Rose</div>
+                <div class="items-right">
+                    <div class="accedi">ACCEDI</div>
+                    <div class="shopping-cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                            <path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Menu desktop -->
-            <nav class="desktop-menu">
-                <ul>
-                    <li id="capi-toggle"><a href="#capi">I nostri capi</a></li>
-                    <li><a href="#about">Chi Siamo</a></li>
-                    <li><a href="#services">Servizi</a></li>
-                    <li><a href="#contact">Contatti</a></li>
-                </ul>
-            </nav>
         </div>
         
-        <!-- Menu mobile -->
-        <nav id="nav-menu" class="mobile-menu">
-            <div class="back-arrow" id="close-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
-                    <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
-                </svg>
-            </div>
+        <!-- Menu desktop -->
+        <nav class="desktop-menu" id="desktop-menu">
             <ul>
-                <li id="capi-toggle_1"><a href="#capi">I nostri capi</a></li>
-                <li><a href="#about">Chi Siamo</a></li>
-                <li><a href="#services">Servizi</a></li>
-                <li><a href="#contact">Contatti</a></li>
+                <li id="capi-toggle"><a href="#esplora">ESPLORA</a></li>
+                <li><a href="#novità">NOVITA'</a></li>
+                <li><a href="#chiSiamo">CHI SIAMO</a></li>
+                <li><a href="#contattaci">CONTATTACI</a></li>
             </ul>
         </nav>
 
@@ -80,25 +74,31 @@
                 </svg>
             </div>
             <ul>
-                <li><a href="#COAT">COAT</a></li>
-                <li><a href="#SWEATER">SWEATER</a></li>
-                <li><a href="#PANT">PANT</a></li>
-                <li><a href="#GONNE">GONNE</a></li>
-                <li><a href="#TOP">TOP</a></li>
-                <li><a href="#DRESS">DRESS</a></li>
+                <li><a id="novità" href="#">NOVITA'</a></li>
+                <li><a href="#">RAPTUS STREET</a></li>
+                <li><a href="#">PERFECTO DRESS</a></li>
+                <li><a href="#">ESSENTIAL</a></li>
+                <li><a href="#">EDIZIONI LIMITATE</a></li>
+                <li><a href="#">POCKET PARTY DRESS</a></li>
+                <li><a href="#">MICRO RAPTUS</a></li>
+                <li><a href="#">LA RESIDENZA MILANESE</a></li>
+                <li><a href="#">RAPTUS DAYS</a></li>
+                <li><a href="#">BUONI REGALO</a></li>
             </ul>
         </nav>
     </header>
 
 <!-- MAIN/HERO SECTION -->
     <main>
-        <div id="hero">
+        <div class="hero" id="hero">
             <div class="hero__content">
+                <!--
                 <picture>
                     <source srcset="images/video0004_2.jpg" media="(max-width: 767px)">
                     <source srcset="images/video0004_1.jpg">
                     <img class="hero__image" src="images/video0004_1.jpg" alt="HERO IMAGE">
                 </picture>
+                -->
             </div>
         </div>
     </main>
@@ -118,6 +118,7 @@
                         <img src="images/ppd/pavonia_1.jpg" alt="Product Image Hover" class="hover-image">
                     </div>
                     <div class="details">
+                        <div class="product-title">Pocket Party Dress - Pavonia</div>
                         <div class="size-buttons">
                             <button class="size-btn" data-size="xs">XS</button>
                             <button class="size-btn" data-size="s">S</button>
@@ -125,7 +126,7 @@
                             <button class="size-btn" data-size="l">L</button>
                             <button class="size-btn" data-size="xl">XL</button>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="add-to-cart">Quick Buy</button>
                     </div>
                 </div>
                 
@@ -135,6 +136,7 @@
                         <img src="images/ppd/sagi_mai_1.jpg" alt="Product Image Hover" class="hover-image">
                     </div>
                     <div class="details">
+                        <div class="product-title">Pocket Party Dress - Sagi Mai</div>
                         <div class="size-buttons">
                             <button class="size-btn" data-size="xs">XS</button>
                             <button class="size-btn" data-size="s">S</button>
@@ -142,7 +144,7 @@
                             <button class="size-btn" data-size="l">L</button>
                             <button class="size-btn" data-size="xl">XL</button>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="add-to-cart">Quick Buy</button>
                     </div>
                 </div>
                         
@@ -152,6 +154,7 @@
                         <img src="images/ppd/sakura_1.jpg" alt="Product Image Hover" class="hover-image">
                     </div>
                     <div class="details">
+                        <div class="product-title">Pocket Party Dress - Sakura</div>
                         <div class="size-buttons">
                             <button class="size-btn" data-size="xs">XS</button>
                             <button class="size-btn" data-size="s">S</button>
@@ -159,7 +162,7 @@
                             <button class="size-btn" data-size="l">L</button>
                             <button class="size-btn" data-size="xl">XL</button>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="add-to-cart">Quick Buy</button>
                     </div>
                 </div> 
                         
@@ -169,6 +172,7 @@
                         <img src="images/ppd/virginia_1.jpg" alt="Product Image Hover" class="hover-image">
                     </div>
                     <div class="details">
+                        <div class="product-title">Pocket Party Dress - Virginia</div>
                         <div class="size-buttons">
                             <button class="size-btn" data-size="xs">XS</button>
                             <button class="size-btn" data-size="s">S</button>
@@ -176,7 +180,7 @@
                             <button class="size-btn" data-size="l">L</button>
                             <button class="size-btn" data-size="xl">XL</button>
                         </div>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="add-to-cart">Quick Buy</button>
                     </div>
                 </div>
                         
