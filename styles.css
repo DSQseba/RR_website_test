@@ -146,16 +146,21 @@ header {
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    /*border-bottom: 1px solid rgba(255,255,255,0.1);*/
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
 
+.background-shadow {
+    background: linear-gradient(135deg, rgba(117, 117, 117, 0.1), rgba(117, 117, 117, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /*border-bottom: 1px solid rgba(255,255,255,0.1);*/
 }
 
 .glass-no-shadow {
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
 }
 
 /*TITLE*/
@@ -234,7 +239,7 @@ header nav ul li a {
     text-decoration: none;
 }
 
-.menu-toggle {
+.memu-toggle {
     fill: black;
     background: none;
     border: none;
@@ -254,31 +259,54 @@ header nav ul li a {
     margin-left: 1rem;
 }
 
-.menu-capi {
+/* MENU SHADOW */
+
+.menu-shadow {
+    pointer-events: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+    background: black;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu-shadow.active {
+    pointer-events: visible;
+    z-index: 3;
+    opacity: 0.3;
+}
+
+/* MAIN MENU */
+
+.main-menu {
     padding: 2rem;
     position: fixed;
     top: 0;
-    left: -100%;  /*Nasconde il menu fuori dallo schermo */
+    left: -100%;
     height: 100%;
     width: 100%;
-    max-width: 300px;
+    max-width: 18rem;
     background-color: white;
     z-index: 4;
     transition: left 0.3s ease-in-out;
     box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.37) ;
 }
 
-.menu-capi ul {
+.main-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.menu-capi ul li {
+.main-menu ul li {
     margin: 0;
 }
 
-.menu-capi ul li a {
+.main-menu ul li a {
     padding: 1rem;
     text-decoration: none;
     color: black;
@@ -287,14 +315,64 @@ header nav ul li a {
     transition: all 0.3s ease;
 }
 
-.menu-capi ul li a:hover {
+.main-menu ul li a:hover {
     font-weight: bold;
     transform: translateX(10px);
 }
 
-.menu-capi.active {
+.main-menu.active {
     left: 0;
 }
+
+/* ESSENTIAL MENU */
+
+.menu-essential {
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    max-width: 18rem;
+    background-color: white;
+    z-index: 3;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.37);
+}
+
+.menu-essential ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-essential ul li {
+    margin: 0;
+}
+
+.menu-essential ul li a {
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.menu-essential ul li a:hover {
+    font-weight: bold;
+    transform: translateX(10px);
+}
+
+.menu-follow-main {
+    left: 0;
+}
+
+.menu-essential.active {
+    left: 22rem;
+}
+
+/* DESKTOP MENU */
 
 .desktop-menu {
     background: transparent;
@@ -343,6 +421,8 @@ header nav ul li a {
     color: rgb(53, 27, 27);
 }
 
+/* HERO SECTION */
+
 .hero {
     display: flex;
     align-items: center;
@@ -366,6 +446,8 @@ header nav ul li a {
     margin-right: auto;
     cursor: pointer;
 }
+
+/* MEDIA REGULATION FOR MENUS */
 
 @media (min-width: 768px) {
     .menu-toggle {
@@ -412,7 +494,7 @@ header nav ul li a {
     font-size: 2rem;
     text-align: center;
     margin: 0;
-    padding-top: 1rem;
+    padding: 1rem;
 }
 
 .product-main {

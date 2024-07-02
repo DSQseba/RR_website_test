@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="title glass" id="title">
+        <div class="title" id="title">
             <div class="title__content">
                 <div class="items-left">
                     <div class="menu-toggle" id="menu-toggle">
@@ -59,16 +59,18 @@
         <!-- Menu desktop -->
         <nav class="desktop-menu" id="desktop-menu">
             <ul>
-                <li id="capi-toggle"><a href="#esplora">ESPLORA</a></li>
+                <li id="main-toggle"><a href="#esplora">ESPLORA</a></li>
                 <li><a href="#novità">NOVITA'</a></li>
                 <li><a href="#chiSiamo">CHI SIAMO</a></li>
                 <li><a href="#contattaci">CONTATTACI</a></li>
             </ul>
         </nav>
 
-        <!-- Menu capi -->
-        <nav id="capi-menu" class="menu-capi">
-            <div class="back-arrow" id="capi-close">
+        <div class="menu-shadow" id="menu-shadow"></div>
+
+        <!-- Menu Principale -->
+        <nav id="main-menu" class="main-menu">
+            <div class="back-arrow" id="main-menu-close">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" >
                     <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
                 </svg>
@@ -77,13 +79,30 @@
                 <li><a id="novità" href="#">NOVITA'</a></li>
                 <li><a href="#">RAPTUS STREET</a></li>
                 <li><a href="#">PERFECTO DRESS</a></li>
-                <li><a href="#">ESSENTIAL</a></li>
+                <li><a id="essential" href="#">ESSENTIAL</a></li>
                 <li><a href="#">EDIZIONI LIMITATE</a></li>
                 <li><a href="#">POCKET PARTY DRESS</a></li>
                 <li><a href="#">MICRO RAPTUS</a></li>
                 <li><a href="#">LA RESIDENZA MILANESE</a></li>
                 <li><a href="#">RAPTUS DAYS</a></li>
                 <li><a href="#">BUONI REGALO</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menu Essential -->
+        <nav id="essential-menu" class="menu-essential">
+            <div class="back-arrow" id="essential-close">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                    <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
+                </svg>
+            </div>
+            <ul>
+                <li><a href="#">CIPRIA</a></li>
+                <li><a href="#">TABACCO</a></li>
+                <li><a href="#">INDIAN PINK</a></li>
+                <li><a href="#">CHOCOMELANZANA</a></li>
+                <li><a href="#">BLU MAJORELLE</a></li>
+                <li><a href="#">NERO</a></li>
             </ul>
         </nav>
     </header>
