@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateScrollPositions() {
         const luoghiRect = luoghiImageContainer.getBoundingClientRect();
         const scrollTop = window.scrollY;
-        startScroll = scrollTop + luoghiRect.top - 43;
-        luoghiHeight = window.innerHeight - 43;
+        startScroll = scrollTop + luoghiRect.top - 44;
+        luoghiHeight = window.innerHeight - 44;
         endScrollScale = startScroll + luoghiHeight/2;
         endScrollTrans = startScroll + luoghiHeight;
     }
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const progress_t = (scrollTop - startScroll) / (endScrollTrans - startScroll);
             const progress_s = (scrollTop - startScroll) / (endScrollScale - startScroll);
             const translateY = progress_t * luoghiHeight;
-            const scale = Math.min(0.9 + progress_s * 0.1 , 1);
+            const scale = Math.min(0.9 + progress_s * 0.1 , 1.);
             luoghiImage.style.transform = `scale(${scale}) translateY(${translateY}px)`;
 
             if(scrollTop > endScrollScale){

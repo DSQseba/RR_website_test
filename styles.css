@@ -490,7 +490,7 @@ header nav ul li a {
 }
 
 .desktop-menu ul li a:hover {
-    color: rgb(53, 27, 27);
+    color: var(--site_color_02);
 }
 
 /* HERO SECTION */
@@ -548,22 +548,42 @@ header nav ul li a {
 /* PRODUCT HOME */
 
 .product-home {
-    margin-bottom: 10rem;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.product-content {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: clip;
 }
 
 .product-main-title {
     position: relative;
+    left: 10%;
     font-family: 'Bodoni Moda', serif;
-    color: black;
-    font-size: 2rem;
     text-align: center;
+    opacity: 0;
     margin: 0;
     padding: 1rem;
+    padding-top: 5rem;
+    animation: product-main-title linear forwards;
+    animation-timeline: view();
+    animation-range-start: entry 30%;
+    animation-range-end: 50%;
+}
+
+@keyframes product-main-title {
+    to { left: 0; opacity: 1;}
 }
 
 .product-main {
     display: flex;
-    padding: 1rem 2rem;
+    position: relative;
     justify-content: center;
 }
 
@@ -571,8 +591,21 @@ header nav ul li a {
 
 .product-grid {
     display: grid;
-    gap: 2rem;
-    width: 90%;
+    position: relative;
+    left: 10%;
+    gap: 4rem;
+    width: 100%;
+    padding: 2rem 4rem;
+    padding-bottom: 12rem;
+    opacity: 0;
+    animation: product-grid ease-in-out forwards; 
+    animation-timeline: view();
+    animation-range-start: entry 20%;
+    animation-range-end: 40%;
+}
+
+@keyframes product-grid {
+    to { left: 0;  opacity: 1; gap: 2rem;}
 }
 
 @media (min-width: 767px) {
