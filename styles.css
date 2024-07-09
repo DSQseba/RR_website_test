@@ -516,7 +516,7 @@ header nav ul li a {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('../images/video0004_1.jpg');
+    background-image: url('images/video0004_1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -793,7 +793,7 @@ header nav ul li a {
 .luoghi-image {
     position: relative;
     height: 100%;
-    background-image: url('../images/residenza.jpg');
+    background-image: url('images/residenza.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -991,13 +991,13 @@ header nav ul li a {
 }
 
 .perf-1 {
-    background-image: url('../images/perfecto/R&R-PERFECTO-DRESS-Aquaria-Desk.jpg');
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Aquaria-Desk.jpg');
 }
 .perf-2 {
-    background-image: url('../images/perfecto/R&R-PERFECTO-DRESS-Armadillo-Desk.jpg');
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Armadillo-Desk.jpg');
 }
 .perf-3 {
-    background-image: url('../images/perfecto/R&R-PERFECTO-DRESS-BlueMajo-Desk.jpg');
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-BlueMajo-Desk.jpg');
 }
 .perf-4 {
 
