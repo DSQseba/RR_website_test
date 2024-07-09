@@ -2,6 +2,7 @@
     --site_color_01: #f7e1ed;
     --site_color_02: #ecbecf;
     --site_color_03: #c6a693;
+    --background_01: rgb(216, 200, 200);
 
     --standard_font: Arial, sans-serif;
 
@@ -9,7 +10,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    
 }
 
 /* FORMATTING */
@@ -41,7 +42,13 @@ html {
     color: white;
 }
 
+.no-header-height-full-width {
+    height: calc(100vh - 2.75rem);
+    width: 100%;
+}
+
 body {
+    background: var(--background_01);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -74,7 +81,7 @@ body {
     height: 100%;
     width: 0;
     border-radius: 15px;
-    background-color: #212121;
+    background-color: var(--site_color_02);
     z-index: -1;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
@@ -82,7 +89,7 @@ body {
 }
    
 .button-1:hover {
-    color: #e8e8e8;
+    color: black;
 }
    
 .button-1:hover::before {
@@ -248,6 +255,7 @@ header {
     position: relative;
     padding: 1rem;
     z-index: 2;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
 }
 
@@ -269,6 +277,7 @@ header {
     font-family: 'LibreBodoni-Regular', serif;
     color: black;
     font-size: 1.5rem;
+    line-height: normal;
     margin: 0;
 }
 
@@ -502,11 +511,12 @@ header nav ul li a {
 /* HERO SECTION */
 
 .hero {
+    background: var(--background_01);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('images/video0004_1.jpg');
+    background-image: url('../images/video0004_1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -554,6 +564,7 @@ header nav ul li a {
 /* PRODUCT HOME */
 
 .product-home {
+    background: var(--background_01);
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -571,7 +582,6 @@ header nav ul li a {
 .product-main-title {
     position: relative;
     left: 10%;
-    font-family: 'Bodoni Moda', serif;
     text-align: center;
     opacity: 0;
     margin: 0;
@@ -756,6 +766,7 @@ header nav ul li a {
 
 /* LUOGHI */
 .luoghi {
+    background: var(--background_01);
     position: relative;
 }
 
@@ -782,10 +793,11 @@ header nav ul li a {
 .luoghi-image {
     position: relative;
     height: 100%;
-    background-image: url('images/residenza.jpg');
+    background-image: url('../images/residenza.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     animation: luoghi-image linear forwards;
     animation-timeline: view();
     animation-range-start: contain;
@@ -804,48 +816,233 @@ header nav ul li a {
 
 }
 
-@keyframes test-text {
-
-}
-
 .luoghi-title {
     position: relative;
-    left: -5%;
     padding: 0 5%;
     padding-top: 5%;
-    padding-bottom: 1rem;
     opacity: 0;
-    animation: fade-in-left ease-in-out forwards;
+    animation: fade-in-bot ease-in-out forwards;
     animation-timeline: view();
 }
 
 .luoghi-desc {
     position: relative;
-    left: -5%;
     padding: 0 5%;
     padding-bottom: 1rem;
     opacity: 0;
-    animation: fade-in-left ease-in-out forwards;
+    animation: fade-in-bot ease-in-out forwards;
     animation-timeline: view();
 }
 
 .luoghi-button-container {
     position: relative;
-    left: -5%;
+    top: 5%;
     padding: 0 5%;
     padding-bottom: 1rem;
     opacity: 0;
-    animation: fade-in-left ease-in-out forwards;
+    animation: fade-in-bot ease-in-out forwards;
     animation-timeline: view();
 }
 
-@keyframes fade-in-left {
-    contain 10% { opacity: 0; left: -5%; }
-    contain 40% { opacity: 1; left: 0; }
-    exit 100% { opacity: 1; left: 0; }
+@keyframes fade-in-bot {
+    contain 10% { opacity: 0; top: 5%; }
+    contain 40% { opacity: 1; top: 0; }
+    exit 100% { opacity: 1; top: 0; }
 }
 
 .placeholder {
+    background: var(--background_01);
     position: relative;  
     height: calc(100vh - 2.75rem);
+}
+
+/* PERFECTO */
+
+.perfecto {
+    background: var(--background_01);
+    display: none;
+    position: relative;
+}
+
+.perfecto-content {
+    position: relative;
+    height: calc((100vh - 2.75rem) * 2);
+    width: 100%;
+}
+
+.perfecto-image-container {
+    position: relative;
+    height: calc(100vh - 2.75rem);
+    width: 100%;
+    animation: perfecto-image-container linear forwards;
+    animation-timeline: view();
+    animation-range-start: contain;
+    animation-range-end: cover calc(100% - 5.5rem);
+}
+
+@keyframes perfecto-image-container {
+    to { transform: translateY(calc(100% - 2.75rem)); }
+}
+
+.perfecto-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    height: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.perf-item {
+    position: relative;
+    background-image: url('../images/perfecto/R&R-PERFECTO-DRESS-Aquaria-Desk.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 154% ;
+}
+
+.blank-grid {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* PERFECTO-1 */
+
+.perfecto-1 {
+    background: var(--background_01);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .perfecto-1 {
+        display: block;
+    }
+}
+
+.perfecto-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    justify-content: center;
+}
+
+.perf-title {
+    position: relative;
+    top: 5%;
+    margin: 0;
+    padding-left: 10%;
+    opacity: 0;
+    animation: fade-in-bot ease-in-out forwards;
+    animation-timeline: view();
+}
+
+.carousel-container {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-left: 2%;
+}
+
+.carousel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.carousel-inner {
+    display: flex;
+    height: 60vh;
+    width: 40vh;
+    align-content: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item {
+}
+
+.carousel-control-next, .carousel-control-prev {
+    position: relative;
+}
+
+.perf-item-1 {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    width: 40vh;
+}
+
+.perf-1 {
+    background-image: url('../images/perfecto/R&R-PERFECTO-DRESS-Aquaria-Desk.jpg');
+}
+.perf-2 {
+    background-image: url('../images/perfecto/R&R-PERFECTO-DRESS-Armadillo-Desk.jpg');
+}
+.perf-3 {
+    background-image: url('../images/perfecto/R&R-PERFECTO-DRESS-BlueMajo-Desk.jpg');
+}
+.perf-4 {
+
+}
+.perf-5 {
+
+}
+.perf-6 {
+
+}
+.perf-7 {
+
+}
+.perf-8 {
+
+}
+.perf-9 {
+
+}
+.perf-10 {
+
+}
+.perf-11 {
+
+}
+.perf-12 {
+
+}
+.perf-13 {
+
+}
+.perf-14 {
+
+}
+.perf-15 {
+
+}
+.perf-16 {
+
+}
+.perf-17 {
+
+}
+.perf-18 {
+
+}
+.perf-19 {
+
 }
