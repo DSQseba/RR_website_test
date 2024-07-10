@@ -22,6 +22,14 @@ html {
     
 }
 
+body {
+    background: var(--background_01);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* FORMATTING */
 .standard-font-format-black {
     font: var(--standard_font);
@@ -72,12 +80,9 @@ html {
     pointer-events: none;
 }
 
-body {
-    background: var(--background_01);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.bod-ital {
+    font-family: 'LibreBodoni-Regular', serif;
+    font-style: italic;
 }
 
 /* BUTTON STILES */
@@ -124,15 +129,20 @@ body {
 /* ANIMATIONS */
 
 @keyframes fade-in-bot {
-    contain 10% { opacity: 0; top: 5%; }
+    contain 10% { opacity: 0; top: 10%; }
     contain 40% { opacity: 1; top: 0; }
     exit 100% { opacity: 1; top: 0; }
 }
 
 @keyframes fade-in-bot-delayed {
-    contain 10% { opacity: 0; top: 5%; }
-    contain 40% { opacity: 0; top: 5%; }
+    contain 10% { opacity: 0; top: 10%; }
+    contain 40% { opacity: 0; top: 10%; }
     contain 80% { opacity: 1; top: 0; }
+    exit 100% { opacity: 1; top: 0; }
+}
+
+@keyframes fade-in-bot-late {
+    contain 70% { opacity: 0; top: 10%; }
     exit 100% { opacity: 1; top: 0; }
 }
 
@@ -850,10 +860,9 @@ header nav ul li a {
 .new-desc {
     line-height: 0.5;
     position: relative;
-    top: 5%;
+    top: 10%;
     display: flex;
     flex-direction: column;
-    align-content: left;
     justify-content: center;
     padding-top: 3%;
     opacity: 0;
@@ -863,7 +872,7 @@ header nav ul li a {
 
 .new-button-container {
     position: relative;
-    top: 5%;
+    top: 10%;
     display: flex;
     align-content: center;
     justify-content: left;
@@ -880,7 +889,7 @@ header nav ul li a {
 
 .new-title-seg {
     position: relative;
-    top: 5%;
+    top: 10%;
     margin: 0;
     opacity: 0;
     animation: fade-in-bot ease-in-out forwards;
@@ -997,7 +1006,8 @@ header nav ul li a {
 }
 
 .luoghi-text {
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
     position: relative;  
     height: calc(100vh - 2.75rem);
 
@@ -1005,29 +1015,32 @@ header nav ul li a {
 
 .luoghi-title {
     position: relative;
+    top: 10%;
+    display: flex;
     padding: 0 5%;
     padding-top: 5%;
     opacity: 0;
-    animation: fade-in-bot ease-in-out forwards;
+    animation: fade-in-bot-late ease-in-out forwards;
     animation-timeline: view();
 }
 
 .luoghi-desc {
     position: relative;
+    top: 10%;
     padding: 0 5%;
     padding-bottom: 1rem;
     opacity: 0;
-    animation: fade-in-bot ease-in-out forwards;
+    animation: fade-in-bot-late ease-in-out forwards;
     animation-timeline: view();
 }
 
 .luoghi-button-container {
     position: relative;
-    top: 5%;
+    top: 10%;
     padding: 0 5%;
     padding-bottom: 1rem;
     opacity: 0;
-    animation: fade-in-bot ease-in-out forwards;
+    animation: fade-in-bot-late ease-in-out forwards;
     animation-timeline: view();
 }
 
@@ -1098,9 +1111,12 @@ header nav ul li a {
 .perfecto-1 {
     background: var(--cipria);
     position: relative;
-    display: flex;
+    display: grid;
     align-items: center;
-    animation: perfecto-1 linear forwards;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    animation: new linear forwards;
     animation-timeline: view();
     animation-range-start: contain;
     animation-range-end: exit calc(100% - 2.75rem);
@@ -1111,7 +1127,13 @@ header nav ul li a {
 }
 
 .perfecto-text {
-    padding-left: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    padding-right: 2%;
+    justify-content: center;
 }
 
 .perfecto-title {
@@ -1125,12 +1147,12 @@ header nav ul li a {
 .perfecto-desc {
     line-height: 0.5;
     position: relative;
-    top: 5%;
+    top: 10%;
     display: flex;
     flex-direction: column;
-    align-content: left;
+    text-align: center;
     justify-content: center;
-    padding-top: 10%;
+    padding-top: 3%;
     opacity: 0;
     animation: fade-in-bot-delayed ease-in-out forwards;
     animation-timeline: view();
@@ -1138,51 +1160,47 @@ header nav ul li a {
 
 .perfecto-button-container {
     position: relative;
-    top: 5%;
+    top: 10%;
     display: flex;
     align-content: center;
-    justify-content: left;
-    padding-top: 10%;
+    justify-content: center;
+    padding-top: 2%;
     opacity: 0;
     animation: fade-in-bot-delayed ease-in-out forwards;
     animation-timeline: view();
 }
 
+.perf-title-main {
+    font-family: 'LibreBodoni-Regular', serif;
+    font-style: italic;
+}
+
 .perf-title {
     position: relative;
-    top: 5%;
+    top: 10%;
     margin: 0;
     opacity: 0;
+    text-align: center;
     animation: fade-in-bot ease-in-out forwards;
     animation-timeline: view();
 }
- /*
-
-@keyframes fade-in-bot-delayed {
-    contain 10% { opacity: 0; top: 5%; }
-    contain 40% { opacity: 0; top: 5%; }
-    contain 80% { opacity: 1; top: 0; }
-    exit 100% { opacity: 1; top: 0; }
-}
-
-*/
 
 .carousel-container {
     position: relative;
-    display: block;
+    display: flex;
     height: 100%;
     width: 100%;
-    padding-left: 2%;
+    padding: 0;
+    justify-content: left;
 }
 
 .perfecto-carousel {
     position: relative;
     height: 100%;
     width: 100%;
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: flex;
     align-content: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .carousel-inner {
@@ -1199,6 +1217,7 @@ header nav ul li a {
 
 .carousel-control-next, .carousel-control-prev {
     position: relative;
+    width: auto;
 }
 
 .perf-item-1 {
@@ -1279,6 +1298,86 @@ header nav ul li a {
     .carousel-control-next, .carousel-control-prev {
         display: none;
     }
+}
+
+/* FILOSOFIA */
+.filosofia {
+    background: var(--tabacco);
+    position: relative;
+}
+
+.filo-content {
+    position: relative;
+}
+
+.filo-image-container {
+    display: block;
+    position: relative;
+    top: 2.75rem;
+    height: calc(100vh - 2.75rem);
+    width: 100%;
+    animation: luoghi-image-container linear forwards;
+    animation-timeline: view();
+    animation-range-start: contain;
+    animation-range-end: cover calc(100% - 5.5rem);
+}
+
+@keyframes luoghi-image-container {
+    to { transform: translateY(calc(100% - 2.75rem)); }
+}
+
+.filo-image {
+    position: relative;
+    height: 100%;
+    background-image: url('images/home0002.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: luoghi-image linear forwards;
+    animation-timeline: view();
+    animation-range-start: contain;
+    animation-range-end: cover calc(70% - 5.5rem);
+    transform: scale(0.9);
+}
+
+@keyframes luoghi-image {
+    to { transform: scale(1); }
+}
+
+.filo-text {
+    display: flexbox;
+    position: relative;  
+    height: calc(100vh - 2.75rem);
+
+}
+
+.filo-title {
+    position: relative;
+    padding: 0 5%;
+    padding-top: 5%;
+    opacity: 0;
+    animation: fade-in-bot ease-in-out forwards;
+    animation-timeline: view();
+}
+
+.filo-desc {
+    position: relative;
+    padding: 0 5%;
+    padding-bottom: 1rem;
+    opacity: 0;
+    animation: fade-in-bot ease-in-out forwards;
+    animation-timeline: view();
+}
+
+.filo-button-container {
+    position: relative;
+    top: 5%;
+    padding: 0 5%;
+    padding-bottom: 1rem;
+    opacity: 0;
+    animation: fade-in-bot ease-in-out forwards;
+    animation-timeline: view();
 }
 
 /* FOOTER */
