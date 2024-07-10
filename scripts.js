@@ -97,4 +97,21 @@ document.addEventListener('DOMContentLoaded', () => {
             //add the item to the cart
         });
     });
+
+    //FOOTER
+
+    const email = document.getElementById('email');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                email.classList.add('visible');
+            } else {
+                email.classList.remove('visible');
+            }
+        });
+    });
+
+    observer.observe(email);
+
 });
