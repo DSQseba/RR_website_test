@@ -19,7 +19,7 @@
 }
 
 html {
-    
+    scroll-behavior: smooth;
 }
 
 body {
@@ -1131,8 +1131,10 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     padding: 0;
     padding-right: 2%;
+    align-items: center;
     justify-content: center;
 }
 
@@ -1239,57 +1241,6 @@ header nav ul li a {
     background-image: url('images/perfecto/R&R-PERFECTO-DRESS-BlueMajo-Desk.jpg');
 }
 
-/*
-.perf-4 {
-
-}
-.perf-5 {
-
-}
-.perf-6 {
-
-}
-.perf-7 {
-
-}
-.perf-8 {
-
-}
-.perf-9 {
-
-}
-.perf-10 {
-
-}
-.perf-11 {
-
-}
-.perf-12 {
-
-}
-.perf-13 {
-
-}
-.perf-14 {
-
-}
-.perf-15 {
-
-}
-.perf-16 {
-
-}
-.perf-17 {
-
-}
-.perf-18 {
-
-}
-.perf-19 {
-
-}
-*/
-
 @media (max-width: 767px) {
     .perfecto-1 {
         display: block;
@@ -1298,6 +1249,323 @@ header nav ul li a {
     .carousel-control-next, .carousel-control-prev {
         display: none;
     }
+}
+
+/* GALLERY */
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gallery-container {
+    position: relative;
+    display: flex;
+    height: 60vh;
+    align-items: center;
+}
+
+.gallery-item {
+    position: absolute;
+    height: 40vh;
+    width: 24vh;
+    opacity: 0;
+    z-index: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+}
+
+.gallery-item-1 {
+    left: 0;
+    height: 60vh;
+    width: 40vh;
+    opacity: 1;
+    z-index: 5;
+}
+
+@keyframes gallery-item {
+
+}
+
+.gallery-item-2 {
+    
+    left: 15%;
+    height: 54vh;
+    width: 36vh;
+    /*
+    left: 0;
+    height: 60vh;
+    width: 40vh;*/
+    opacity: .9;
+    z-index: 4;
+    /*
+    animation: gallery-item-2 ease-in-out forwards;
+    animation-timeline: view();
+    */
+}
+
+@keyframes gallery-item-2 {
+    contain 10% { left: 0; height: 60vh; width: 40vh;}
+    contain 70% { left: 15%; height: 54vh; width: 36vh; }
+    exit 100% { left: 15%; height: 54vh; width: 36vh; }
+}
+
+.gallery-item-3 {
+    left: 22%;
+    height: 48vh;
+    width: 32vh;
+    opacity: .7;
+    z-index: 3;
+    /*
+    animation: gallery-item-3 ease-in-out forwards;
+    animation-timeline: view();
+    */
+}
+
+@keyframes gallery-item-3 {
+
+}
+
+.gallery-item-4 {
+    left: 28%;
+    height: 44vh;
+    width: 28vh;
+    opacity: .6;
+    z-index: 2;
+    /*
+    animation: gallery-item-4 ease-in-out forwards;
+    animation-timeline: view();
+    */
+}
+
+@keyframes gallery-item-4 {
+
+}
+
+.gallery-item-5 {
+    left: 33%;
+    height: 40vh;
+    width: 24vh;
+    opacity: .5;
+    z-index: 1;
+    /*
+    animation: gallery-item-5 ease-in-out forwards;
+    animation-timeline: view();
+    */
+}
+
+@keyframes gallery-item-5 {
+
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+    height: 100px;
+}
+
+.gallery-controls button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0 50px;
+    padding: 0 12px;
+    text-transform: capitalize;
+}
+
+.gallery-controls-button:focus {
+    outline: none;
+}
+
+.gallery-controls-previous {
+    position: relative;
+}
+
+.gallery-controls-previous::before {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    left: -30px;
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    transform: rotate(135deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+}
+
+.gallery-controls-previous:hover::before {
+    left: -40px;
+}
+
+.gallery-controls-next {
+    position: relative;
+}
+
+.gallery-controls-next::before {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    right: -30px;
+    top: 45%;
+    padding: 10px;
+    position: absolute;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.15s ease-in-out;
+}
+
+.gallery-controls-next:hover::before {
+    right: -40px;
+}
+
+.gallery-nav {
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.gallery nav li {
+    background: white;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin: 0 16px;
+}
+
+.gallery-nav li.gallery-item-selected {
+    background: #888;
+}
+
+.perf-1 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Aquaria-Desk.jpg');
+}
+.perf-2 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Armadillo-Desk.jpg');
+}
+.perf-3 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-BlueMajo-Desk.jpg');
+}
+.perf-4 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Britannia-Desk.jpg');
+}
+.perf-5 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Chocolate-Desk.jpg');
+}
+.perf-6 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Chocomela-Desk.jpg');
+}
+.perf-7 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Christmas-Red-Desk.jpg');
+}
+.perf-8 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Cipria.jpg');
+}
+.perf-9 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Florabilia-Desk.jpg');
+}
+.perf-10 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Ghepardo-Desk.jpg');
+}
+.perf-11 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Indian-Desk.jpg');
+}
+.perf-12 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Japan-Black.jpg');
+}
+.perf-13 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Japan-Bloom-Desk.jpg');
+}
+.perf-14 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Nero-Desk.jpg');
+}
+.perf-15 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Queen-Rose-Desk.jpg');
+}
+.perf-16 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Rosa-Res-Desk.jpg');
+}
+.perf-17 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Tabacco-Desk.jpg');
+}
+.perf-18 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Vulcania-Desk.jpg');
+}
+.perf-19 {
+    background-image: url('images/perfecto/R&R-PERFECTO-DRESS-Zebbra-Desk.jpg');
+}
+
+/* PERFECTO-2 */
+
+.perfecto-2 {
+    background: var(--cipria);
+    position: relative;
+    display: grid;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    animation: new linear forwards;
+    animation-timeline: view();
+    animation-range-start: contain;
+    animation-range-end: exit calc(100% - 2.75rem);
+}
+
+.perfecto-2-row {
+    position: relative;
+    height: calc(100vh - 2.75rem);
+}
+
+.new-controls {
+    position: relative;
+    display: flex;
+    max-width: 40vh;
+    justify-content: center;
+}
+
+.prev-new {
+    padding: 1rem;
+    padding-right: 0;
+    transition: all .3s ease-in-out;
+}
+
+.prev-new:hover {
+    transform: translateX(-.5rem);
+    fill: grey;
+}
+
+.next-new {
+    padding: 1rem;
+    padding-left: 0;
+    transition: all .3s ease-in-out;
+}
+
+.next-new:hover {
+    transform: translateX(.5rem);
+    fill: grey;
+}
+
+.fwd-svg {
+    height: 40px;
+}
+
+.bwd-svg {
+    height: 40px;
 }
 
 /* FILOSOFIA */
@@ -1346,37 +1614,43 @@ header nav ul li a {
 }
 
 .filo-text {
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
     position: relative;  
     height: calc(100vh - 2.75rem);
 
 }
 
 .filo-title {
-    position: relative;
     padding: 0 5%;
     padding-top: 5%;
+}
+
+.filo-title p {
+    position: relative;
+    top: 10%;
     opacity: 0;
-    animation: fade-in-bot ease-in-out forwards;
+    animation: fade-in-bot-late ease-in-out forwards;
     animation-timeline: view();
 }
 
 .filo-desc {
     position: relative;
+    top: 10%;
     padding: 0 5%;
     padding-bottom: 1rem;
     opacity: 0;
-    animation: fade-in-bot ease-in-out forwards;
+    animation: fade-in-bot-late ease-in-out forwards;
     animation-timeline: view();
 }
 
 .filo-button-container {
     position: relative;
-    top: 5%;
+    top: 10%;
     padding: 0 5%;
     padding-bottom: 1rem;
     opacity: 0;
-    animation: fade-in-bot ease-in-out forwards;
+    animation: fade-in-bot-late ease-in-out forwards;
     animation-timeline: view();
 }
 

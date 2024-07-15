@@ -114,4 +114,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(email);
 
+
+    //GALLERY
+
+    const galleryContainer = document.querySelector('.gallery-container');
+    const galleryControlsContainer = document.querySelector('.gallery-controls');
+    const galleryControls = ['previous', 'next'];
+    const galleryNext = document.getElementById('next-new');
+    const galleryPrev = document.getElementById('prev-new');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    class Carousel {
+        
+        constructor(container, items, controls){
+            this.carouselContainer = container;
+            this.carouselControls = controls;
+            this.carouselArray = [...items];
+        }
+
+        updateGallery(){
+            this.carouselArray.forEach(el => {
+                el.classList.remove('gallery-item-1');
+                el.classList.remove('gallery-item-2');
+                el.classList.remove('gallery-item-3');
+                el.classList.remove('gallery-item-4');
+                el.classList.remove('gallery-item-5');
+            });
+    
+            this.carouselArray.slice(0, 5).forEach((el, i) => {
+                el.classList.add(`gallery-item-${i+1}`)
+            });
+        }
+    
+        setCurrentState(direction){
+            if(direction === 'previous'){
+                this.carouselArray.unshift(this.carouselArray.pop());
+            }else{
+                this.carouselArray.push(this.carouselArray.shift());
+            }
+            this.updateGallery();
+        }
+
+        useControls() {
+            galleryNext.addEventListener('click', e => {
+                e.preventDefault();
+                this.setCurrentState('next');
+            });
+    
+            galleryPrev.addEventListener('click', e => {
+                e.preventDefault();
+                this.setCurrentState('previous');
+            });
+        }
+
+    }
+
+    const exampleCarousel = new Carousel(galleryContainer, galleryItems);
+
+    exampleCarousel.updateGallery();
+    exampleCarousel.useControls();
+
 });
